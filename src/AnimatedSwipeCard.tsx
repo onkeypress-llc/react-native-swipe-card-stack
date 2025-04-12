@@ -39,7 +39,7 @@ export default function AnimatedSwipeCard({
               [null, { dx: position.x, dy: position.y }],
               { useNativeDriver: false }
             ),
-            onPanResponderRelease(e, gestureState) {
+            onPanResponderRelease(_, gestureState) {
               if (gestureState.dx > 120) {
                 Animated.spring(position, {
                   toValue: { x: screenWidth + 100, y: gestureState.dy },
